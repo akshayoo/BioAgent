@@ -3,8 +3,24 @@ import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
+
+function Welcome() {
+    return(
+        <div>Welcome to my  app</div>
+    )
+}
+
+function ProjectInfo() {
+    return(
+        <>
+        <div>Project name: BioAgent</div>
+        <div>Description: AI-powered Bioinformatics Platform</div>
+        </>
+    )
+}
+
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
+    const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
 
   async function greet() {
@@ -29,6 +45,9 @@ function App() {
       </div>
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
+      <Welcome/>
+      <ProjectInfo/>
+
       <form
         className="row"
         onSubmit={(e) => {
@@ -44,6 +63,7 @@ function App() {
         <button type="submit">Greet</button>
       </form>
       <p>{greetMsg}</p>
+
     </main>
   );
 }
